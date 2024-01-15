@@ -36,10 +36,9 @@ export default function ImagesSwiper({ images }) {
       />
 
       <Swiper
-        spaceBetween={0}
-        slidesPerGroup={1}
+        spaceBetween={16}
         slidesPerView={"auto"}
-        className={`h-fit mr-auto transition ease-linear  overflow-visible ${
+        className={`h-fit px-4 mr-auto transition ease-linear ${
           loading ? "translate-y-8 opacity-0" : "opacity-100"
         }`}
       >
@@ -47,14 +46,14 @@ export default function ImagesSwiper({ images }) {
           <SwiperSlide
             key={img.alt}
             onClick={() => openModal(img, i)}
-            className={`max-w-fit overflow-visible ${
-              i === 0 ? "pl-4 pr-2" : i === images.length - 1 ? "pr-4 " : "pr-2"
+            className={`max-w-fit ${
+              i === 0 ? "pl-4" : i === images.length - 1 && "pr-4"
             }`}
           >
             <img
               src={img.image.src}
               alt={img.alt}
-              className="object-contain transition-opacity ease-linear rounded cursor-pointer h-fit max-h-64 hover:opacity-90"
+              className="object-contain transition-opacity ease-linear rounded cursor-pointer w-full max-w-[calc(100vw-64px)] h-fit max-h-64 hover:opacity-90"
             />
           </SwiperSlide>
         ))}
