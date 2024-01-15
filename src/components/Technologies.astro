@@ -1,0 +1,74 @@
+---
+import TechnologyItem from "./TechnologyItem.astro";
+
+import Html from "../components/icons/Html.astro";
+import Css from "../components/icons/Css.astro";
+import Javascript from "../components/icons/Javascript.astro";
+import React from "../components/icons/React.astro";
+import Next from "../components/icons/Next.astro";
+import AstroLogo from "./icons/AstroLogo.astro";
+import Expo from "../components/icons/Expo.astro";
+import Tailwind from "../components/icons/Tailwind.astro";
+import Firebase from "../components/icons/Firebase.astro";
+import Git from "../components/icons/Git.astro";
+import Github from "../components/icons/Github.astro";
+
+const TECHNOLOGIES = [
+  {
+    icon: Html,
+    name: "Html",
+  },
+  {
+    icon: Css,
+    name: "Css",
+  },
+  {
+    icon: Javascript,
+    name: "Javascript",
+  },
+  {
+    icon: React,
+    name: "React.js",
+  },
+  {
+    icon: Next,
+    name: "Next.js",
+  },
+  {
+    icon: AstroLogo,
+    name: "Astro",
+  },
+  {
+    icon: React,
+    name: "React Native",
+  },
+  {
+    icon: Expo,
+    name: "Expo",
+  },
+  {
+    icon: Tailwind,
+    name: "Tailwind",
+  },
+  {
+    icon: Firebase,
+    name: "Firebase",
+  },
+  {
+    icon: Git,
+    name: "Git",
+  },
+  {
+    icon: Github,
+    name: "GitHub",
+  },
+];
+---
+
+<ul class="flex flex-wrap w-full gap-4">
+  {
+    TECHNOLOGIES.map((el) => (
+      <TechnologyItem Icon={el.icon}>{el.name}</TechnologyItem>
+    ))
+  }
+</ul>

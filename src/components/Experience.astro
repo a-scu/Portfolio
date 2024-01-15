@@ -1,0 +1,26 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    id: "previate-esta-app",
+    title: "Previate Esta · App",
+    description: "Fui el encargado de desarrollar la totalidad del proyecto",
+    date: "Diciembre 2022 · Actualidad",
+  },
+  {
+    id: "previate-esta-web",
+    title: "Previate Esta · Web",
+    description: "Fui el encargado de desarrollar la totalidad del proyecto",
+    date: "Agosto 2023 · Actualidad",
+  },
+];
+---
+
+<ol class="items-center max-w-screen-md sm:flex">
+  {
+    EXPERIENCE.map((el, i) => (
+      <ExperienceItem data={el} last={i === EXPERIENCE.length - 1} />
+    ))
+  }
+</ol>

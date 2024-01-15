@@ -1,0 +1,257 @@
+---
+import ProjectItem from "../components/ProjectItem.astro";
+
+import previate_app_home from "../img/projects/previate-app/previate-app-home.png";
+import previate_app_juegos from "../img/projects/previate-app/previate-app-juegos.png";
+import previate_app_yo_nunca from "../img/projects/previate-app/previate-app-yo-nunca.png";
+import previate_app_ruleta from "../img/projects/previate-app/previate-app-ruleta.png";
+import previate_app_freestyle from "../img/projects/previate-app/previate-app-freestyle.png";
+import previate_app_mayor_menor from "../img/projects/previate-app/previate-app-mayor-menor.png";
+import previate_app_truquito from "../img/projects/previate-app/previate-app-truquito.png";
+import previate_app_acerca_de from "../img/projects/previate-app/previate-app-acerca-de.png";
+
+import random_quiz_quiz from "../img/projects/random-quiz/random-quiz.png";
+import random_quiz_desktop_edit_quiz from "../img/projects/random-quiz/random-quiz-desktop-edit-quiz.png";
+import random_quiz_mobile_profile from "../img/projects/random-quiz/random-quiz-mobile-profile.png";
+import random_quiz_mobile_edit_quiz_1 from "../img/projects/random-quiz/random-quiz-mobile-edit-quiz-1.png";
+import random_quiz_mobile_edit_quiz_2 from "../img/projects/random-quiz/random-quiz-mobile-edit-quiz-2.png";
+
+import previate_web_1 from "../img/projects/previate-web/previate-web-1.png";
+import previate_web_2 from "../img/projects/previate-web/previate-web-2.png";
+import previate_web_3 from "../img/projects/previate-web/previate-web-3.png";
+import previate_web_4 from "../img/projects/previate-web/previate-web-4.png";
+import previate_web_5 from "../img/projects/previate-web/previate-web-5.png";
+import previate_web_mobile_1 from "../img/projects/previate-web/previate-web-mobile-1.png";
+import previate_web_mobile_2 from "../img/projects/previate-web/previate-web-mobile-2.png";
+import previate_web_mobile_3 from "../img/projects/previate-web/previate-web-mobile-3.png";
+
+import imdb_clone_desktop from "../img/projects/imdb-clone/imdb-clone-desktop.png";
+import imdb_clone_mobile from "../img/projects/imdb-clone/imdb-clone-mobile.png";
+
+import Html from "../components/icons/Html.astro";
+import Css from "../components/icons/Css.astro";
+import Javascript from "../components/icons/Javascript.astro";
+import React from "../components/icons/React.astro";
+import Next from "../components/icons/Next.astro";
+import AstroLogo from "./icons/AstroLogo.astro";
+import Expo from "../components/icons/Expo.astro";
+import Tailwind from "../components/icons/Tailwind.astro";
+import Firebase from "../components/icons/Firebase.astro";
+import Git from "../components/icons/Git.astro";
+import Github from "../components/icons/Github.astro";
+
+const TECHNOLOGIES = {
+  html: {
+    icon: Html,
+    name: "Html",
+  },
+  css: {
+    icon: Css,
+    name: "Css",
+  },
+  javascript: {
+    icon: Javascript,
+    name: "Javascript",
+    color: "bg-yellow-500 text-black font-semibold",
+  },
+  react: {
+    icon: React,
+    name: "React.js",
+    color: "bg-[#222222] text-[#00D8FF]",
+  },
+  next: {
+    icon: Next,
+    name: "Next.js",
+    color: "bg-white text-black font-semibold",
+  },
+  astro: {
+    icon: AstroLogo,
+    name: "Astro",
+  },
+  react_native: {
+    icon: React,
+    name: "React Native",
+    color: "bg-[#222222] text-[#00D8FF]",
+  },
+  expo: {
+    icon: Expo,
+    name: "Expo",
+    color: "bg-white text-black font-semibold",
+  },
+  tailwind: {
+    icon: Tailwind,
+    name: "Tailwind",
+    color: "bg-sky-700",
+  },
+  firebase: {
+    icon: Firebase,
+    name: "Firebase",
+    color: "bg-amber-600",
+  },
+  git: {
+    icon: Git,
+    name: "Git",
+  },
+  github: {
+    icon: Github,
+    name: "GitHub",
+  },
+};
+
+const PROJECTS = [
+  {
+    id: "previate-esta-app",
+    title: "Previate Esta",
+    description:
+      "Aplicación de juegos para previas con más de 1 millón de descargas.",
+    body: "Previate Esta es una aplicación de juegos para previas disponible para Android y iOS muy conocida en Argentina y cuenta con más de un millón de descargas entre ambas plataformas.\nFui contratado en noviembre de 2022 para rehacer desde cero la aplicación y añadirle nuevas funciones, el creador quería un código más limpio y optimizado, además de agregar nuevos juegos y funciones.\nDesde que comencé a trabajar, me encargué de reconstruir toda la app existente anteriormente desde cero.\nImplementé el nuevo diseño de la aplicación, implementé un sistema de idiomas, añadí más de 10 juegos nuevos, configuré anuncios personalizados, implementé un sistema de compras con Revenue Cat, entre otras cosas.\nActualmente, sigo trabajando en las nuevas actualizaciones y soy el único desarrollador activo.\nLa app fue construida con React Native, Expo, Native Wind (Tailwind CSS), Firebase, entre otras tecnologías.",
+    category: "Aplicación Móvil",
+    technologies: [
+      TECHNOLOGIES.react_native,
+      TECHNOLOGIES.javascript,
+      TECHNOLOGIES.expo,
+      TECHNOLOGIES.tailwind,
+      TECHNOLOGIES.firebase,
+    ],
+    //
+    web: "https://previateesta.com/",
+    playStore:
+      "https://play.google.com/store/apps/details?id=com.gmail.lcrmit25.PreviateEsta&hl=en&gl=US",
+    appStore: "https://apps.apple.com/pe/app/previate-esta/id1482071439",
+    //
+    imagesMobile: [
+      {
+        image: previate_app_home,
+        alt: "Pantalla de inicio",
+      },
+      {
+        image: previate_app_juegos,
+        alt: "Juegos",
+      },
+      {
+        image: previate_app_yo_nunca,
+        alt: "Yo nunca",
+      },
+      { image: previate_app_ruleta, alt: "Ruleta" },
+      {
+        image: previate_app_freestyle,
+        alt: "Freestyle",
+      },
+      {
+        image: previate_app_mayor_menor,
+        alt: "Mayor menor",
+      },
+      { image: previate_app_truquito, alt: "Truquito" },
+      {
+        image: previate_app_acerca_de,
+        alt: "Acerca de",
+      },
+    ],
+  },
+
+  {
+    id: "random-quiz",
+    title: "Random Quiz",
+    description: "Página de encuestas inspirada en la conocida página 'uQuiz'",
+    body: "Random Quiz es una página de encuestas o tests de personalidad que funciona como una red social. \nLos usuarios pueden crearse una cuenta, subir sus tests, personalizar su perfil, realizar otros tests, darles like o marcarlos como favoritos, etc.\nEs mi proyecto más grande, y aún no está terminado, ya que no me di cuenta de la inmensidad de trabajo que requería crear una red social desde cero, hasta que me adentré en la tarea de hacerlo.\nFaltan cosas muy importantes como la seguridad de las cuentas y el login (al especializarme en frontend decidí no invertir mi tiempo en esto), diseño, optimizaciones, el menú mobile, entre otras cosas que terminaré en cuanto encuentre el tiempo necesario.\nLa página está hecha con Next.js, Tailwind CSS y Firebase, entre otras tecnologías.",
+    category: "Página web",
+    technologies: [
+      TECHNOLOGIES.next,
+      TECHNOLOGIES.react,
+      TECHNOLOGIES.javascript,
+      TECHNOLOGIES.tailwind,
+      TECHNOLOGIES.firebase,
+    ],
+    //
+    web: "https://random-quiz-7q77ofx8a-a-scu.vercel.app/",
+    github: "https://github.com/a-scu/Random-Quiz-Web",
+    //
+    imagesDesktop: [
+      { image: random_quiz_quiz, alt: "Tomar Quiz" },
+      {
+        image: random_quiz_desktop_edit_quiz,
+        alt: "Editar quiz",
+      },
+    ],
+    imagesMobile: [
+      { image: random_quiz_mobile_profile, alt: "Perfil" },
+      {
+        image: random_quiz_mobile_edit_quiz_1,
+        alt: "Editar quiz 1",
+      },
+      {
+        image: random_quiz_mobile_edit_quiz_2,
+        alt: "Editar quiz 2",
+      },
+    ],
+  },
+
+  {
+    id: "previate-esta-web",
+    title: "Previate Esta",
+    description:
+      "Página web de la exitosa app de juegos para previas 'Previate Esta'.",
+    body: "Previate Esta es una aplicación de juegos para previas disponible para Android e iOS. Es muy conocida en Argentina y cuenta con más de un millón de descargas entre ambas plataformas.\nLlevo trabajando en la aplicación desde 2022, y en octubre de 2023 fui contratado para crear el sitio web, ya que el anterior tenía mucho tiempo sin ser actualizado.\nPara construirlo utilicé React.js, Tailwind CSS y Firebase, entre otras tecnologías.",
+    category: "Página Web",
+    technologies: [
+      TECHNOLOGIES.react,
+      TECHNOLOGIES.javascript,
+      TECHNOLOGIES.tailwind,
+      TECHNOLOGIES.firebase,
+    ],
+    //
+    web: "https://previateesta.com/",
+    //
+    imagesDesktop: [
+      { image: previate_web_1, alt: "Welcome" },
+      { image: previate_web_2, alt: "Sección 1" },
+      { image: previate_web_3, alt: "Sección 2" },
+      { image: previate_web_4, alt: "Sección 3" },
+      { image: previate_web_5, alt: "Footer" },
+    ],
+    imagesMobile: [
+      { image: previate_web_mobile_1, alt: "Welcome" },
+      { image: previate_web_mobile_2, alt: "Sección 2" },
+      { image: previate_web_mobile_3, alt: "Sección 3" },
+    ],
+  },
+
+  {
+    id: "imdb-clone",
+    title: "IMDb Clone",
+    description:
+      "Página con información sobre películas inspirada en la conocida página 'IMDb'.",
+    body: "IMDb Clone es una página simple que obtiene datos desde una API con información sobre series, películas, documentales, entre otros contenidos audiovisuales, y los muestra al usuario en una interfaz limpia y amigable.\nEstá inspirada en la conocida página 'IMDb' (Internet Movie Database), y la utilicé principalmente para aprender los conceptos de Next.js (server-side rendering, fetching, etc.) y Tailwind CSS, ya que este fue mi primer proyecto con ambas tecnologías.",
+    category: "Página Web",
+    technologies: [
+      TECHNOLOGIES.next,
+      TECHNOLOGIES.react,
+      TECHNOLOGIES.javascript,
+      TECHNOLOGIES.tailwind,
+    ],
+    //
+    web: "https://imdb-clone-i8k08k7im-a-scu.vercel.app/",
+    github: "https://github.com/a-scu/IMDb-Clone",
+    //
+    imagesDesktop: [{ image: imdb_clone_desktop, alt: "Inicio" }],
+    imagesMobile: [{ image: imdb_clone_mobile, alt: "Inicio" }],
+  },
+];
+---
+
+<section
+  id="projects"
+  class="flex flex-col justify-center w-full gap-8 pt-24 pb-8 pl-4"
+>
+  <h2 class="text-3xl font-extrabold">Proyectos</h2>
+
+  <div class="flex flex-col gap-8">
+    {
+      PROJECTS.map((el, i) => (
+        <>
+          <ProjectItem data={el} />
+        </>
+      ))
+    }
+  </div>
+</section>

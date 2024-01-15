@@ -1,51 +1,92 @@
 ---
-interface Props {
-	title: string;
-}
+import "@fontsource-variable/onest";
+
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="es" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Desarrollador web y móvil especializado en tecnologías como React.js, Next.js, Astro, JavaScript, HTML, CSS, Tailwind CSS, React Native y Expo. Explora mi portafolio para ver mis proyectos y habilidades."
+    />
+    <meta
+      name="keywords"
+      content="Desarrollador Web, Desarrollador Móvil, React, React.js, React Native, Next js, Next.js, JavaScript, HTML, CSS, Git, GitHub, Firebase, Tailwind CSS, Expo"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+  :root {
+    color-scheme: light dark;
+    --neon: #0369a1;
+  }
+
+  html {
+    font-family: "Onest Variable", sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: linear-gradient(to right, #004e92, #0c215c);
+    min-height: 100vh;
+  }
+
+  header {
+    background: linear-gradient(to right, #004e92, #0c215c);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  .flickering-neon-text {
+    animation: sky-flicker 1.5s infinite alternate;
+  }
+
+  @keyframes sky-flicker {
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+      text-shadow:
+        0 0 4px var(--neon),
+        0 0 11px var(--neon),
+        0 0 19px var(--neon),
+        0 0 40px var(--neon),
+        0 0 80px var(--neon);
+    }
+
+    20%,
+    24%,
+    55% {
+      text-shadow: none;
+    }
+  }
 </style>

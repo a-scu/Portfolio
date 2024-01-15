@@ -1,0 +1,108 @@
+---
+import TechnologyPill from "./TechnologyPill.astro";
+import ExpansibleText from "./ExpansibleText";
+import SmallLink from "./SmallLink.astro";
+import ImagesSwiper from "./ImagesSwiper.jsx";
+
+const { data } = Astro.props;
+const {
+  id,
+  title,
+  description,
+  body,
+  category,
+  technologies,
+  web,
+  github,
+  appStore,
+  playStore,
+  imagesDesktop,
+  imagesMobile,
+} = data;
+---
+
+<!-- cambiar iconos negros por unos que tengan relleno blanco | menu mobile -->
+<article id={id} class="flex flex-col justify-center gap-4 scroll-mt-24">
+  <div class="flex flex-col justify-center gap-4 pr-4">
+    <div class="flex flex-wrap items-center gap-2">
+      <h3 class="text-xl font-medium">{title}</h3>
+
+      <span class="text-sm font-light text-neutral-200">{category}</span>
+
+      {
+        technologies.map((tech) => (
+          <TechnologyPill Icon={tech.icon} color={tech.color}>
+            {tech.name}
+          </TechnologyPill>
+        ))
+      }
+    </div>
+
+    <ExpansibleText client:load contracted={description} expanded={body} />
+
+    <div class="flex flex-wrap gap-3">
+      {
+        appStore && (
+          <SmallLink href={appStore} target="_blank" icon="logo-apple-appstore">
+            App Store
+          </SmallLink>
+        )
+      }
+      {
+        playStore && (
+          <SmallLink
+            href={playStore}
+            target="_blank"
+            icon="logo-google-playstore"
+          >
+            Play Store
+          </SmallLink>
+        )
+      }
+      {
+        web && (
+          <SmallLink href={web} target="_blank" icon="globe">
+            Web del Proyecto
+          </SmallLink>
+        )
+      }
+      {
+        github && (
+          <SmallLink href={github} target="_blank" icon="logo-github">
+            GitHub
+          </SmallLink>
+        )
+      }
+    </div>
+  </div>
+
+  {
+    imagesDesktop?.length && (
+      <div class="flex flex-col justify-start gap-2 w-fit">
+        <div class="flex flex-wrap items-center justify-between gap-x-2">
+          <h4>Desktop</h4>
+          <span class="text-sm font-light text-neutral-200">
+            {imagesDesktop.length}{" "}
+            {imagesDesktop.length > 1 ? "Capturas" : "Captura"}
+          </span>
+        </div>
+        <ImagesSwiper client:load images={imagesDesktop} />
+      </div>
+    )
+  }
+
+  {
+    imagesMobile?.length && (
+      <div class="flex flex-col gap-2 w-fit">
+        <div class="flex flex-wrap items-center justify-between pr-4 gap-x-2">
+          <h4>Mobile</h4>
+          <span class="text-sm font-light text-neutral-200">
+            {imagesMobile.length}{" "}
+            {imagesMobile.length > 1 ? "Capturas" : "Captura"}
+          </span>
+        </div>
+        <ImagesSwiper client:load images={imagesMobile} />
+      </div>
+    )
+  }
+</article>

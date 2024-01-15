@@ -1,0 +1,26 @@
+---
+import Experience from "./Experience.astro";
+import Technologies from "./Technologies.astro";
+---
+
+<section
+  id="about"
+  class="flex flex-col justify-center w-full gap-8 px-4 pt-24 pb-8"
+>
+  <h2 class="text-3xl font-extrabold">Sobre Mi</h2>
+  <p class="text-pretty">
+    Mi nombre es Alexis, tengo 23 años y soy de Buenos Aires, Argentina.
+    <br /> Soy un desarrollador web y mobile autodidacta, enfocado al frontend. Utilizo
+    como principales tecnologias React y React Native
+  </p>
+
+  <div class="flex flex-col gap-4">
+    <h3 class="text-xl font-medium">Experiencia:</h3>
+    <Experience />
+  </div>
+
+  <div class="flex flex-col gap-4">
+    <h3 class="text-xl font-medium">Tecnologías:</h3>
+    <Technologies />
+  </div>
+</section>
