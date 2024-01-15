@@ -3,16 +3,12 @@ import { useState, useEffect } from "react";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-export default function ImagesModal({
-  modal,
-  setModal,
-  closeModal,
-  images,
-  image,
-}) {
+export default function ImagesModal({ modal, closeModal, images }) {
   const [swiper, setSwiper] = useState(null);
 
   useEffect(() => {
+    if (modal.isOpen) swiper?.slideTo(modal.i);
+
     const handlePressedKey = (e) => {
       if (e.key === "ArrowLeft") {
         handlePrev(e);
@@ -26,7 +22,7 @@ export default function ImagesModal({
     return () => {
       window.removeEventListener("keydown", handlePressedKey);
     };
-  }, [swiper]);
+  }, [modal]);
 
   const handlePrev = (e) => {
     e.stopPropagation();

@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import ImagesModal from "./ImagesModal";
 
-const initialModal = { isOpen: false, image: null };
+const initialModal = { isOpen: false, image: null, i: 0 };
 
 export default function ImagesSwiper({ images }) {
   const [loading, setLoading] = useState(true);
@@ -39,7 +39,7 @@ export default function ImagesSwiper({ images }) {
         spaceBetween={0}
         slidesPerGroup={1}
         slidesPerView={"auto"}
-        className={`h-fit mr-auto transition ease-linear ${
+        className={`h-fit mr-auto transition ease-linear  overflow-visible ${
           loading ? "translate-y-8 opacity-0" : "opacity-100"
         }`}
       >
@@ -47,12 +47,8 @@ export default function ImagesSwiper({ images }) {
           <SwiperSlide
             key={img.alt}
             onClick={() => openModal(img, i)}
-            className={`max-w-fit ${
-              i === 0
-                ? "pxl-4 pr-2"
-                : i === images.length - 1
-                ? "pr-4 "
-                : "pr-2"
+            className={`max-w-fit overflow-visible ${
+              i === 0 ? "pl-4 pr-2" : i === images.length - 1 ? "pr-4 " : "pr-2"
             }`}
           >
             <img
