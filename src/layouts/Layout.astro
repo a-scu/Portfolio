@@ -24,7 +24,11 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="relative">
+    <div class="absolute -z-[1] flex w-full bg-indigo-900 h-1/2 bg-1"></div>
+    <div class="absolute -z-[1] flex w-full bottom-0 bg-indigo-900 h-1/2 bg-2">
+    </div>
+
     <Header />
     <slot />
     <Footer />
@@ -43,6 +47,14 @@ const { title } = Astro.props;
     --neon: #0369a1;
   }
 
+  .bg-1 {
+    background: linear-gradient(to right bottom, #0650a3, #1758ad, #0b50b8);
+  }
+
+  .bg-2 {
+    background: linear-gradient(to right top, #0550a5, #1758ad, #0b50b8);
+  }
+
   html {
     font-family: "Onest Variable", sans-serif;
     scroll-behavior: smooth;
@@ -50,13 +62,29 @@ const { title } = Astro.props;
 
   body {
     /* background: linear-gradient(to right, #075eaa, #0c2c5c); */
-    background-color: #0a5a85;
+    /* background-color: #0a5a85; */
     min-height: 100vh;
   }
 
   header {
     /* background: linear-gradient(to right, #075eaa, #0c2c5c); */
-    background-color: #0a5a85;
+    /* background-color: #0a5a85; */
+  }
+
+  #welcome {
+    /* background-image: linear-gradient(to bottom, #00000000, #22247280); */
+  }
+
+  #about {
+    /* background-image: linear-gradient(to bottom, #22247280, #095c4a80); */
+  }
+
+  #projects {
+    /* background-image: linear-gradient(to bottom, #095c4a80, #6d1c7080); */
+  }
+
+  footer {
+    /* background: #6d1c7080; */
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -92,3 +120,5 @@ const { title } = Astro.props;
     }
   }
 </style>
+
+<!-- bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:16px_32px] -->
