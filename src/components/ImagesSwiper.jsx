@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import ImagesModal from "./ImagesModal";
+
 const initialModal = { isOpen: false, image: null };
 
 export default function ImagesSwiper({ images }) {
@@ -11,53 +13,11 @@ export default function ImagesSwiper({ images }) {
 
   useEffect(() => {
     setLoading(false);
-
-    const handleTeclaPresionada = (e) => {
-      if (e.key === "ArrowLeft") {
-        console.log("Flecha izquierda presionada");
-        handlePrev(e);
-      } else if (e.key === "ArrowRight") {
-        console.log("Flecha derecha presionada");
-        handleNext(e);
-      }
-    };
-
-    window.addEventListener("keydown", handleTeclaPresionada);
-
-    return () => {
-      window.removeEventListener("keydown", handleTeclaPresionada);
-    };
   }, []);
 
-  const handlePrev = (e) => {
-    e.stopPropagation();
-
-    setModal((prevModal) => {
-      const index = images.findIndex((img) => img === prevModal.image);
-      if (index !== -1) {
-        const previousIndex = (index - 1 + images.length) % images.length;
-        return { ...prevModal, image: images[previousIndex] };
-      }
-      return prevModal;
-    });
-  };
-
-  const handleNext = (e) => {
-    e.stopPropagation();
-
-    setModal((prevModal) => {
-      const index = images.findIndex((img) => img === prevModal.image);
-      if (index !== -1) {
-        const nextIndex = (index + 1) % images.length;
-        return { ...prevModal, image: images[nextIndex] };
-      }
-      return prevModal;
-    });
-  };
-
-  const openModal = (img) => {
+  const openModal = (img, i) => {
     document.body.style.overflow = "hidden";
-    setModal({ isOpen: true, image: img });
+    setModal({ isOpen: true, image: img, i });
   };
 
   const closeModal = () => {
@@ -67,50 +27,13 @@ export default function ImagesSwiper({ images }) {
 
   return (
     <>
-      <div
-        onClick={closeModal}
-        className={`fixed flex flex-col top-0 left-0 z-20 w-full max-w-screen h-full max-h-screen px-4 pt-8 pb-24 bg-slate-950/50 backdrop-blur-sm justify-center items-center overflow-hidden transition-opacity ${
-          modal.isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
-      >
-        {modal.image && (
-          <img
-            src={modal.image.image.src}
-            alt={modal.image.alt}
-            className="object-contain max-h-full rounded h-min"
-          />
-        )}
-
-        <div className="absolute bottom-0 flex justify-center w-full gap-8 p-8">
-          <button
-            onClick={handlePrev}
-            className="flex items-center justify-center transition ease-linear outline-none h-fit group active:scale-95"
-          >
-            <ion-icon
-              name="chevron-back"
-              class="size-8 group-hover:text-blue-400 transition-colors ease-linear"
-            ></ion-icon>
-          </button>
-          <button
-            onClick={closeModal}
-            className="flex items-center justify-center transition ease-linear outline-none h-fit group active:scale-95"
-          >
-            <ion-icon
-              name="close"
-              class="size-8 group-hover:text-blue-400 transition-colors ease-linear"
-            ></ion-icon>
-          </button>
-          <button
-            onClick={handleNext}
-            className="flex items-center justify-center transition ease-linear outline-none h-fit group active:scale-95"
-          >
-            <ion-icon
-              name="chevron-forward"
-              class="size-8 group-hover:text-blue-400 transition-colors ease-linear"
-            ></ion-icon>
-          </button>
-        </div>
-      </div>
+      <ImagesModal
+        modal={modal}
+        setModal={setModal}
+        openModal={openModal}
+        closeModal={closeModal}
+        images={images}
+      />
 
       <Swiper
         spaceBetween={0}
@@ -123,7 +46,7 @@ export default function ImagesSwiper({ images }) {
         {images?.map((img, i) => (
           <SwiperSlide
             key={img.alt}
-            onClick={() => openModal(img)}
+            onClick={() => openModal(img, i)}
             className={`max-w-fit ${
               i === 0
                 ? "pxl-4 pr-2"
