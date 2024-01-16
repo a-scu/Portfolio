@@ -3,15 +3,8 @@ import Button from "./Button";
 import Loading from "./Loading";
 
 export default function ContactForm() {
-  const {
-    form,
-    errors,
-    loading,
-    success,
-    handleChange,
-    handleBlur,
-    handleSubmit,
-  } = useForm();
+  const { form, errors, loading, success, handleChange, handleSubmit } =
+    useForm();
 
   const ERROR_CODES = {
     required: "El campo es requerido",
@@ -32,7 +25,6 @@ export default function ContactForm() {
           value={form.name}
           placeholder="Tu nombre"
           onChange={handleChange}
-          onBlur={handleBlur}
           className="w-full px-2.5 py-1.5 bg-transparent text-sm placeholder:text-neutral-400 placeholder:text-xs placeholder:font-extraligh border rounded outline-none outline-1 outline-transparent outline outline-offset-0 focus-visible:outline-white"
         />
         {errors.name && (
@@ -54,7 +46,6 @@ export default function ContactForm() {
           value={form.email}
           placeholder="Tu email"
           onChange={handleChange}
-          onBlur={handleBlur}
           className="w-full px-2.5 py-1.5 bg-transparent text-sm placeholder:text-neutral-400 placeholder:text-xs placeholder:font-extraligh border rounded outline-none outline-1 outline-transparent outline outline-offset-0 focus-visible:outline-white"
         />
         {errors.email && (
@@ -78,7 +69,6 @@ export default function ContactForm() {
           cols={30}
           rows={10}
           onChange={handleChange}
-          onBlur={handleBlur}
           className="w-full px-2.5 py-1.5 bg-transparent text-sm placeholder:text-neutral-400 placeholder:text-xs placeholder:font-extraligh border rounded outline-none outline-1 outline-transparent outline outline-offset-0 focus-visible:outline-white resize-none"
         />
         {errors.message && (

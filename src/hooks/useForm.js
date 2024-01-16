@@ -46,11 +46,6 @@ export default function useForm() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleBlur = (e) => {
-    handleChange(e);
-    setErrors(validateForm());
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const errors = validateForm();
@@ -83,7 +78,6 @@ export default function useForm() {
     loading,
     success,
     handleChange,
-    handleBlur,
     handleSubmit,
   };
 }
