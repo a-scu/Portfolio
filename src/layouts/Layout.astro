@@ -40,7 +40,6 @@ const { title } = Astro.props;
 <style is:global>
   :root {
     color-scheme: light dark;
-    --neon: #0369a1;
   }
 
   html {
@@ -72,33 +71,6 @@ const { title } = Astro.props;
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
-    }
-  }
-
-  .flickering-neon-text {
-    animation: sky-flicker 1.5s infinite alternate;
-  }
-
-  @keyframes sky-flicker {
-    0%,
-    18%,
-    22%,
-    25%,
-    53%,
-    57%,
-    100% {
-      text-shadow:
-        0 0 4px var(--neon),
-        0 0 11px var(--neon),
-        0 0 19px var(--neon),
-        0 0 40px var(--neon),
-        0 0 80px var(--neon);
-    }
-
-    20%,
-    24%,
-    55% {
-      text-shadow: none;
     }
   }
 </style>
