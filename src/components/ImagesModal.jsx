@@ -54,7 +54,7 @@ export default function ImagesModal({ modal, closeModal, images }) {
               <img
                 src={img.image.src}
                 alt={img.alt}
-                className="object-contain max-h-full transition-opacity ease-linear rounded cursor-pointer"
+                className="object-contain max-h-full transition-opacity ease rounded cursor-pointer"
               />
             </div>
           </SwiperSlide>
@@ -64,31 +64,31 @@ export default function ImagesModal({ modal, closeModal, images }) {
       <div className="flex justify-center w-full gap-8 px-4 py-8 ">
         <button
           onClick={handlePrev}
-          className="flex items-center justify-center transition ease-linear outline-none h-fit group active:scale-95 swiper-button-prev"
+          className="flex items-center justify-center transition ease outline-none h-fit group active:scale-95 swiper-button-prev"
         >
           <ion-icon
             name="chevron-back"
-            class="transition-colors ease-linear size-8 group-hover:text-blue-400"
+            class="transition-colors ease size-8 group-hover:text-blue-400"
           ></ion-icon>
         </button>
 
         <button
           onClick={closeModal}
-          className="flex items-center justify-center transition ease-linear outline-none h-fit group active:scale-95"
+          className="flex items-center justify-center transition ease outline-none h-fit group active:scale-95"
         >
           <ion-icon
             name="close"
-            class="transition-colors ease-linear size-8 group-hover:text-blue-400"
+            class="transition-colors ease size-8 group-hover:text-blue-400"
           ></ion-icon>
         </button>
 
         <button
           onClick={handleNext}
-          className="flex items-center justify-center transition ease-linear outline-none h-fit group active:scale-95 swiper-button-next"
+          className="flex items-center justify-center transition ease outline-none h-fit group active:scale-95 swiper-button-next"
         >
           <ion-icon
             name="chevron-forward"
-            class="transition-colors ease-linear size-8 group-hover:text-blue-400"
+            class="transition-colors ease size-8 group-hover:text-blue-400"
           ></ion-icon>
         </button>
       </div>
