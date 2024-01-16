@@ -11,9 +11,9 @@ export default function ImagesModal({ modal, closeModal, images }) {
 
     const handlePressedKey = (e) => {
       if (e.key === "ArrowLeft") {
-        handlePrev(e);
+        if (modal.isOpen) handlePrev(e);
       } else if (e.key === "ArrowRight") {
-        handleNext(e);
+        if (modal.isOpen) handleNext(e);
       }
     };
 

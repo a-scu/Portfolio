@@ -1,9 +1,45 @@
 ---
-import SmallLink from "./SmallLink.astro";
+import PillLink from "./PillLink.astro";
 import profile from "../img/scu-profile.webp";
+
+const LINKS = [
+  {
+    href: "https://github.com/a-scu",
+    target: "_blank",
+    name: "GitHub",
+    icon: "logo-github",
+  },
+  {
+    href: "https://www.linkedin.com/in/alexisscuderi/",
+    target: "_blank",
+    name: "LinkedIn",
+    icon: "logo-linkedin",
+  },
+  {
+    href: "https://www.linkedin.com/in/alexisscuderi/",
+    target: "_blank",
+    name: "scuderialexis2001@gmail.com",
+    icon: "mail",
+  },
+  {
+    href: "https://api.whatsapp.com/send/?phone=1134611064&text&type=phone_number&app_absent=0",
+    target: "_blank",
+    name: "+54 11-3461-1064",
+    icon: "logo-whatsapp",
+  },
+  {
+    href: "https://www.canva.com/design/DAE87irucb4/DrMIZOHSo2ADOOkzjA2QOw/view?utm_content=DAE87irucb4&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink",
+    target: "_blank",
+    name: "Currículum",
+    icon: "document-text",
+  },
+];
 ---
 
-<section id="welcome" class="flex flex-col w-full gap-4 px-4 pb-8 pt-44">
+<section
+  id="welcome"
+  class="flex flex-col w-full gap-4 px-4 pt-32 pb-8 sm:pt-44"
+>
   <img
     src={profile.src}
     alt=""
@@ -34,36 +70,12 @@ import profile from "../img/scu-profile.webp";
   </p>
 
   <div class="flex flex-wrap w-full gap-3">
-    <SmallLink
-      href="https://www.linkedin.com/in/alexisscuderi/"
-      target="_blank"
-      icon="logo-linkedin"
-    >
-      LinkedIn
-    </SmallLink>
-    <SmallLink
-      href="https://github.com/a-scu"
-      target="_blank"
-      icon="logo-github"
-    >
-      GitHub
-    </SmallLink>
-    <SmallLink href="/" target="_blank" icon="mail">
-      scuderialexis2001@gmail.com
-    </SmallLink>
-    <SmallLink
-      href="https://api.whatsapp.com/send/?phone=1134611064&text&type=phone_number&app_absent=0"
-      target="_blank"
-      icon="logo-whatsapp"
-    >
-      +54 11-3461-1064
-    </SmallLink>
-    <SmallLink
-      href="https://www.canva.com/design/DAE87irucb4/DrMIZOHSo2ADOOkzjA2QOw/view?utm_content=DAE87irucb4&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink"
-      target="_blank"
-      icon="document-text"
-    >
-      Currículum
-    </SmallLink>
+    {
+      LINKS.map((link) => (
+        <PillLink href={link.href} target={link.target} icon={link.icon}>
+          {link.name}
+        </PillLink>
+      ))
+    }
   </div>
 </section>

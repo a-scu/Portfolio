@@ -1,7 +1,7 @@
 ---
 import TechnologyPill from "./TechnologyPill.astro";
 import ExpansibleText from "./ExpansibleText";
-import SmallLink from "./SmallLink.astro";
+import PillLink from "./PillLink.astro";
 import ImagesSwiper from "./ImagesSwiper.jsx";
 
 const { data } = Astro.props;
@@ -42,34 +42,34 @@ const {
     <div class="flex flex-wrap gap-3">
       {
         appStore && (
-          <SmallLink href={appStore} target="_blank" icon="logo-apple-appstore">
+          <PillLink href={appStore} target="_blank" icon="logo-apple-appstore">
             App Store
-          </SmallLink>
+          </PillLink>
         )
       }
       {
         playStore && (
-          <SmallLink
+          <PillLink
             href={playStore}
             target="_blank"
             icon="logo-google-playstore"
           >
             Play Store
-          </SmallLink>
+          </PillLink>
         )
       }
       {
         web && (
-          <SmallLink href={web} target="_blank" icon="globe">
+          <PillLink href={web} target="_blank" icon="globe">
             Web del Proyecto
-          </SmallLink>
+          </PillLink>
         )
       }
       {
         github && (
-          <SmallLink href={github} target="_blank" icon="logo-github">
+          <PillLink href={github} target="_blank" icon="logo-github">
             GitHub
-          </SmallLink>
+          </PillLink>
         )
       }
     </div>

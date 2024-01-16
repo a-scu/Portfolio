@@ -5,12 +5,12 @@ export default function ExpansibleText({ contracted, expanded }) {
 
   return (
     <div>
-      <p className="font-light whitespace-pre-line text-neutral-200 text-pretty">
+      <p className="whitespace-pre-line text-pretty">
         {isContracted ? contracted : expanded}
       </p>
       <button
         onClick={() => setIsContracted(!isContracted)}
-        className="flex items-center gap-1 text-sm"
+        className="flex items-center gap-1 text-sm font-light rounded outline-none cursor-pointer text-neutral-200 outline-1 outline-transparent outline outline-offset-2 focus-visible:outline-white"
       >
         {isContracted ? "Mostrar mas" : "Mostrar menos"}
         <ion-icon

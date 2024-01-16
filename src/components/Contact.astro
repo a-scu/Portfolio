@@ -1,0 +1,27 @@
+---
+import Link from "./Link.astro";
+import ContactForm from "./ContactForm";
+---
+
+<section
+  id="contact"
+  class="flex flex-col justify-center w-full gap-8 px-4 pt-24 pb-8"
+>
+  <h2 class="text-3xl font-extrabold">Contacto</h2>
+
+  <div class="flex items-center gap-8 justify-evenly max-md:flex-col">
+    <div class="flex flex-col w-full gap-1 max-w-80">
+      <p class="text-pretty">No dudes en mandarme un mensaje...</p>
+
+      <Link
+        href="https://www.linkedin.com/in/alexisscuderi/"
+        target={"_blank"}
+        icon="mail"
+      >
+        scuderialexis2001@gmail.com
+      </Link>
+    </div>
+
+    <ContactForm client:load />
+  </div>
+</section>
