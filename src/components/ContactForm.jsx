@@ -30,10 +30,10 @@ export default function ContactForm() {
           id="name"
           name="name"
           value={form.name}
-          placeholder="..."
+          placeholder="Tu nombre"
           onChange={handleChange}
           onBlur={handleBlur}
-          className="w-full px-2.5 py-1.5 bg-transparent text-sm placeholder:text-neutral-400 placeholder:font-extralight border rounded outline-none outline-1 outline-transparent outline outline-offset-0 focus-visible:outline-white"
+          className="w-full px-2.5 py-1.5 bg-transparent text-sm placeholder:text-neutral-400 placeholder:text-xs placeholder:font-extraligh border rounded outline-none outline-1 outline-transparent outline outline-offset-0 focus-visible:outline-white"
         />
         {errors.name && (
           <p className="mx-auto text-xs font-semibold text-red-500">
@@ -52,10 +52,10 @@ export default function ContactForm() {
           id="email"
           name="email"
           value={form.email}
-          placeholder="ejemplo@email.com"
+          placeholder="Tu email"
           onChange={handleChange}
           onBlur={handleBlur}
-          className="w-full px-2.5 py-1.5 bg-transparent text-sm placeholder:text-neutral-400 placeholder:font-extralight border rounded outline-none outline-1 outline-transparent outline outline-offset-0 focus-visible:outline-white"
+          className="w-full px-2.5 py-1.5 bg-transparent text-sm placeholder:text-neutral-400 placeholder:text-xs placeholder:font-extraligh border rounded outline-none outline-1 outline-transparent outline outline-offset-0 focus-visible:outline-white"
         />
         {errors.email && (
           <p className="mx-auto text-xs font-semibold text-red-500">
@@ -74,12 +74,12 @@ export default function ContactForm() {
           id="message"
           name="message"
           value={form.message}
-          placeholder="..."
+          placeholder="Tu mensaje"
           cols={30}
           rows={10}
           onChange={handleChange}
           onBlur={handleBlur}
-          className="w-full px-2.5 py-1.5 bg-transparent text-sm placeholder:text-neutral-400 placeholder:font-extralight border rounded outline-none outline-1 outline-transparent outline outline-offset-0 focus-visible:outline-white resize-none"
+          className="w-full px-2.5 py-1.5 bg-transparent text-sm placeholder:text-neutral-400 placeholder:text-xs placeholder:font-extraligh border rounded outline-none outline-1 outline-transparent outline outline-offset-0 focus-visible:outline-white resize-none"
         />
         {errors.message && (
           <p className="mx-auto text-xs font-semibold text-red-500">
