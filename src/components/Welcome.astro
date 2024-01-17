@@ -1,36 +1,42 @@
 ---
 import PillLink from "./PillLink.astro";
 
+import GitHub from "./icons-astro/GitHub.astro";
+import LinkedIn from "./icons-astro/LinkedIn.astro";
+import Mail from "./icons-astro/Mail.astro";
+import TextDocument from "./icons-astro/TextDocument.astro";
+import WhatsApp from "./icons-astro/WhatsApp.astro";
+
 const LINKS = [
   {
     href: "https://github.com/a-scu",
     target: "_blank",
     name: "GitHub",
-    icon: "logo-github",
+    icon: GitHub,
   },
   {
     href: "https://www.linkedin.com/in/alexisscuderi/",
     target: "_blank",
     name: "LinkedIn",
-    icon: "logo-linkedin",
+    icon: LinkedIn,
   },
   {
     href: "mailto:scuderialexis2001@gmail.com",
     target: "_blank",
     name: "scuderialexis2001@gmail.com",
-    icon: "mail",
+    icon: Mail,
   },
   {
     href: "https://api.whatsapp.com/send/?phone=1134611064&text&type=phone_number&app_absent=0",
     target: "_blank",
     name: "+54 11-3461-1064",
-    icon: "logo-whatsapp",
+    icon: WhatsApp,
   },
   {
     href: "https://www.canva.com/design/DAE87irucb4/DrMIZOHSo2ADOOkzjA2QOw/view?utm_content=DAE87irucb4&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink",
     target: "_blank",
     name: "Currículum",
-    icon: "document-text",
+    icon: TextDocument,
   },
 ];
 ---
@@ -64,7 +70,7 @@ const LINKS = [
   <div class="flex flex-wrap w-full gap-3">
     {
       LINKS.map((link) => (
-        <PillLink href={link.href} target={link.target} icon={link.icon}>
+        <PillLink href={link.href} target={link.target} Icon={link.icon}>
           {link.name}
         </PillLink>
       ))

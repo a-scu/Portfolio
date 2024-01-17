@@ -1,6 +1,11 @@
 import useForm from "../hooks/useForm";
+
 import Button from "./Button";
-import Loading from "./Loading";
+
+import Send from "./icons-react/Send";
+import Loading from "./icons-react/Loading";
+import CheckMark from "./icons-react/CheckMark";
+import Close from "./icons-react/Close";
 
 export default function ContactForm() {
   const { form, errors, loading, success, handleChange, handleSubmit } =
@@ -83,29 +88,31 @@ export default function ContactForm() {
 
       <div className="mx-auto">
         {loading ? (
-          <span class="w-fit group flex gap-1 items-center px-2.5 border py-1.5 text-sm font-medium truncate border-white rounded">
-            Enviando
+          <div className="w-fit group flex gap-2 items-center px-2.5 border py-1.5 rounded">
+            <span className="text-sm font-medium truncate">Enviando</span>
             <Loading className="size-3.5 animate-spin" />
-          </span>
+          </div>
         ) : success ? (
-          <span class="w-fit group flex gap-1 items-center px-2.5 border py-1.5 text-sm font-medium truncate border-white rounded">
-            Enviado
-            <ion-icon name="checkmark" class="size-3.5"></ion-icon>
-          </span>
+          <div className="w-fit group flex gap-2 items-center px-2.5 border py-1.5 rounded">
+            <span className="text-sm font-medium truncate">Enviado</span>
+            <CheckMark className="size-3.5 " />
+          </div>
         ) : success === false ? (
-          <span class="w-fit group flex gap-1 items-center px-2.5 border py-1.5 text-sm font-medium truncate border-white rounded">
-            Error
-            <ion-icon name="close" class="size-3.5"></ion-icon>
-          </span>
+          <div className="w-fit group flex gap-2 items-center px-2.5 border py-1.5 rounded">
+            <span className="text-sm font-medium truncate">Error</span>
+            <Close className="size-3.5 " />
+          </div>
         ) : !loading && success === null ? (
-          <Button onClick={handleSubmit} icon="send">
+          <Button onClick={handleSubmit} Icon={Send}>
             Enviar
           </Button>
         ) : (
-          <span class="w-fit group flex gap-1 items-center px-2.5 border py-1.5 text-sm font-medium truncate border-white rounded">
-            Error Desconocido
-            <ion-icon name="close" class="size-3.5"></ion-icon>
-          </span>
+          <div className="w-fit group flex gap-2 items-center px-2.5 border py-1.5 rounded">
+            <span className="text-sm font-medium truncate">
+              Error Desconocido
+            </span>
+            <Close className="size-3.5 " />
+          </div>
         )}
       </div>
     </form>

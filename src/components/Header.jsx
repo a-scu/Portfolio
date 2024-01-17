@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import Menu from "./icons-react/Menu.jsx";
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -16,14 +18,10 @@ export default function Header() {
       <button
         onClick={handleMenu}
         aria-label="Menu"
-        id="menu"
         title="Menu"
         className="flex items-center justify-center transition-transform ease-linear rounded outline-none size-8 sm:hidden group active:scale-95 outline-1 outline-transparent outline outline-offset-0 focus-visible:outline-white"
       >
-        <ion-icon
-          name="grid-outline"
-          class="transition-colors ease-linear size-6 group-hover:text-sky-400"
-        ></ion-icon>
+        <Menu className="transition-colors ease-linear size-6 group-hover:text-sky-400 " />
       </button>
 
       <nav

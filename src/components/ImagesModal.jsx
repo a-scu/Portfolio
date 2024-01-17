@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
+import ArrowBack from "./icons-react/ArrowBack";
+import ArrowForward from "./icons-react/ArrowForward";
+import Close from "./icons-react/Close";
 
 export default function ImagesModal({ modal, closeModal, images }) {
   const [swiper, setSwiper] = useState(null);
@@ -54,8 +57,10 @@ export default function ImagesModal({ modal, closeModal, images }) {
               <img
                 src={img.image.src}
                 alt={img.alt}
+                width={500}
+                height={500}
                 loading="lazy"
-                className="object-contain max-h-full transition-opacity ease-linear rounded cursor-pointer"
+                className="object-contain w-full max-h-full transition-opacity ease-linear rounded cursor-pointer"
               />
             </div>
           </SwiperSlide>
@@ -69,10 +74,7 @@ export default function ImagesModal({ modal, closeModal, images }) {
           aria-label="Anterior"
           className="flex items-center justify-center transition ease-linear outline-none h-fit group active:scale-95 swiper-button-prev"
         >
-          <ion-icon
-            name="chevron-back"
-            class="transition-colors ease-linear size-8 group-hover:text-sky-400"
-          ></ion-icon>
+          <ArrowBack className="transition-colors ease-linear size-8 group-hover:text-sky-400 " />
         </button>
 
         <button
@@ -81,10 +83,7 @@ export default function ImagesModal({ modal, closeModal, images }) {
           aria-label="Cerrar"
           className="flex items-center justify-center transition ease-linear outline-none h-fit group active:scale-95"
         >
-          <ion-icon
-            name="close"
-            class="transition-colors ease-linear size-8 group-hover:text-sky-400"
-          ></ion-icon>
+          <Close className="transition-colors ease-linear size-8 group-hover:text-sky-400 " />
         </button>
 
         <button
@@ -93,10 +92,7 @@ export default function ImagesModal({ modal, closeModal, images }) {
           aria-label="Siguiente"
           className="flex items-center justify-center transition ease-linear outline-none h-fit group active:scale-95 swiper-button-next"
         >
-          <ion-icon
-            name="chevron-forward"
-            class="transition-colors ease-linear size-8 group-hover:text-sky-400"
-          ></ion-icon>
+          <ArrowForward className="transition-colors ease-linear size-8 group-hover:text-sky-400 " />
         </button>
       </div>
     </div>

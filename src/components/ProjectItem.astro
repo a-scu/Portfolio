@@ -3,6 +3,10 @@ import TechnologyPill from "./TechnologyPill.astro";
 import ExpansibleText from "./ExpansibleText";
 import PillLink from "./PillLink.astro";
 import ImagesSwiper from "./ImagesSwiper.jsx";
+import GooglePlay from "./icons-astro/GooglePlay.astro";
+import Globe from "./icons-astro/Globe.astro";
+import GitHub from "./icons-astro/GitHub.astro";
+import AppStore from "./icons-astro/AppStore.astro";
 
 const { data } = Astro.props;
 const {
@@ -45,32 +49,28 @@ const {
     <div class="flex flex-wrap gap-3">
       {
         appStore && (
-          <PillLink href={appStore} target="_blank" icon="logo-apple-appstore">
+          <PillLink href={appStore} target="_blank" Icon={AppStore}>
             App Store
           </PillLink>
         )
       }
       {
         playStore && (
-          <PillLink
-            href={playStore}
-            target="_blank"
-            icon="logo-google-playstore"
-          >
+          <PillLink href={playStore} target="_blank" Icon={GooglePlay}>
             Play Store
           </PillLink>
         )
       }
       {
         web && (
-          <PillLink href={web} target="_blank" icon="globe">
+          <PillLink href={web} target="_blank" Icon={Globe}>
             Web del Proyecto
           </PillLink>
         )
       }
       {
         github && (
-          <PillLink href={github} target="_blank" icon="logo-github">
+          <PillLink href={github} target="_blank" Icon={GitHub}>
             GitHub
           </PillLink>
         )

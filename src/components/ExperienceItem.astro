@@ -1,5 +1,7 @@
 ---
 import PillLink from "./PillLink.astro";
+import ArrowForwardCircle from "./icons-astro/ArrowForwardCircle.astro";
+import Briefcase from "./icons-astro/Briefcase.astro";
 
 const { data, last } = Astro.props;
 const { id, date, title, category, description } = data;
@@ -10,17 +12,9 @@ const { id, date, title, category, description } = data;
     <div
       class="z-10 flex items-center justify-center p-2 bg-white rounded-full"
     >
-      <ion-icon name="briefcase" class="text-black size-4"></ion-icon>
+      <Briefcase class="text-black size-4" />
     </div>
     <div class="hidden sm:flex w-full bg-white h-[1px]"></div>
-    {
-      last && (
-        <ion-icon
-          name="chevron-forward"
-          class="transition-colors ease-linear max-sm:hidden size-5 group-hover:text-sky-400"
-        />
-      )
-    }
   </div>
   <div class="mt-3 sm:pe-8">
     <div class="flex flex-wrap items-center gap-x-2">
@@ -34,7 +28,7 @@ const { id, date, title, category, description } = data;
       {description}
     </p>
 
-    <PillLink href={`/#${id}`} icon="arrow-forward-circle">
+    <PillLink href={`/#${id}`} Icon={ArrowForwardCircle}>
       Ir al proyecto
     </PillLink>
   </div>

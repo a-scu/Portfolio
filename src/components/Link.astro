@@ -1,5 +1,5 @@
 ---
-const { href, target, icon } = Astro.props;
+const { href, target, Icon } = Astro.props;
 ---
 
 <a
@@ -9,11 +9,8 @@ const { href, target, icon } = Astro.props;
   class="flex items-center gap-1 rounded outline-none cursor-pointer group outline-1 outline-transparent outline outline-offset-2 focus-visible:outline-white w-fit"
 >
   {
-    icon && (
-      <ion-icon
-        name={icon}
-        class="transition-colors ease-linear size-3.5 group-hover:text-sky-400 group-active:text-sky-400"
-      />
+    Icon && (
+      <Icon className="transition-colors ease-linear size-3.5 group-hover:text-sky-400 group-active:text-sky-400" />
     )
   }
   <span
