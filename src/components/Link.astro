@@ -6,13 +6,13 @@ const { href, target, icon } = Astro.props;
   href={href}
   target={target}
   rel="noopener noreferrer"
-  class="flex items-center gap-1 text-sm font-medium truncate transition-colors ease rounded outline-none cursor-pointer outline-1 outline-transparent outline outline-offset-2 focus-visible:outline-white w-fit group hover:text-blue-400 active:text-blue-400"
+  class="flex items-center gap-1 text-sm font-medium truncate transition-colors ease-linear rounded outline-none cursor-pointer outline-1 outline-transparent outline outline-offset-2 focus-visible:outline-white w-fit group hover:text-sky-400 active:text-sky-400"
 >
   {
     icon && (
       <ion-icon
         name={icon}
-        class="transition-colors ease size-3.5 group-hover:text-blue-400 group-active:text-blue-400"
+        class="transition-colors ease-linear size-3.5 group-hover:text-sky-400 group-active:text-sky-400"
       />
     )
   }
