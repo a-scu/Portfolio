@@ -15,6 +15,9 @@ export default function Header() {
     <header className="fixed z-20 flex justify-center w-full h-16 p-4 max-w-sm:items-center max-sm:bottom-0">
       <button
         onClick={handleMenu}
+        aria-label="Menu"
+        id="menu"
+        title="Menu"
         className="flex items-center justify-center transition-transform ease-linear rounded outline-none size-8 sm:hidden group active:scale-95 outline-1 outline-transparent outline outline-offset-0 focus-visible:outline-white"
       >
         <ion-icon
