@@ -6,9 +6,12 @@ const { href, target, icon } = Astro.props;
   href={href}
   target={target}
   rel="noopener noreferrer"
-  class="w-fit group flex gap-1 items-center px-2.5 border py-1.5 text-sm font-medium truncate hover:text-sky-400 active:text-sky-400 outline-none border-white hover:border-sky-400 active:border-sky-400 outline-1 outline-transparent outline rounded-full outline-offset-0 focus-visible:outline-white transition ease-linear active:scale-95 cursor-pointer"
+  class="w-fit group flex gap-1 items-center px-2.5 border py-1.5 outline-none hover:border-sky-400 active:border-sky-400 outline-1 outline-transparent outline rounded-full outline-offset-0 focus-visible:outline-white transition ease-linear active:scale-95 cursor-pointer"
 >
-  <slot />
+  <span
+    class="text-sm font-medium truncate transition-colors ease-linear group-hover:text-sky-400 group-active:text-sky-400"
+    ><slot />
+  </span>
   {
     icon && (
       <ion-icon

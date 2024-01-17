@@ -6,7 +6,7 @@ const { href, target, icon } = Astro.props;
   href={href}
   target={target}
   rel="noopener noreferrer"
-  class="flex items-center gap-1 text-sm font-medium truncate transition-colors ease-linear rounded outline-none cursor-pointer outline-1 outline-transparent outline outline-offset-2 focus-visible:outline-white w-fit group hover:text-sky-400 active:text-sky-400"
+  class="flex items-center gap-1 rounded outline-none cursor-pointer group outline-1 outline-transparent outline outline-offset-2 focus-visible:outline-white w-fit"
 >
   {
     icon && (
@@ -16,5 +16,8 @@ const { href, target, icon } = Astro.props;
       />
     )
   }
-  <slot />
+  <span
+    class="text-sm font-medium truncate transition-colors ease-linear group-hover:text-sky-400 group-active:text-sky-400"
+    ><slot />
+  </span>
 </a>

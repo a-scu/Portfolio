@@ -14,8 +14,16 @@ export default function ContactForm() {
   return (
     <form className="flex flex-col w-full gap-4 max-w-80">
       <div className="flex flex-col gap-2">
-        <label htmlFor="name" className="text-sm">
+        <label
+          htmlFor="name"
+          className="flex flex-wrap items-center gap-2 text-sm"
+        >
           Nombre:
+          {errors.name && (
+            <p className="ml-auto text-xs font-light text-neutral-200">
+              {ERROR_CODES[errors.name]}
+            </p>
+          )}
         </label>
         <input
           required
@@ -25,18 +33,21 @@ export default function ContactForm() {
           value={form.name}
           placeholder="Tu nombre"
           onChange={handleChange}
-          className="w-full px-2.5 py-1.5 bg-transparent text-sm placeholder:text-neutral-400 placeholder:text-xs placeholder:font-extraligh border rounded outline-none outline-1 outline-transparent outline outline-offset-0 focus-visible:outline-white"
+          className="w-full px-2.5 py-1.5 bg-transparent hover:border-sky-400 transition-colors ease-linear active:border-sky-400 text-sm placeholder:text-neutral-400 placeholder:text-xs placeholder:font-extraligh border rounded outline-1 outline-transparent outline-offset-0 outline focus-visible:outline-sky-400 focus-visible:border-sky-400"
         />
-        {errors.name && (
-          <p className="mx-auto text-xs font-semibold text-red-500">
-            {ERROR_CODES[errors.name]}
-          </p>
-        )}
       </div>
 
       <div className="flex flex-col gap-2">
-        <label htmlFor="email" className="text-sm">
+        <label
+          htmlFor="email"
+          className="flex flex-wrap items-center gap-2 text-sm"
+        >
           Email:
+          {errors.email && (
+            <p className="ml-auto text-xs font-light text-neutral-200">
+              {ERROR_CODES[errors.email]}
+            </p>
+          )}
         </label>
         <input
           required
@@ -46,18 +57,21 @@ export default function ContactForm() {
           value={form.email}
           placeholder="Tu email"
           onChange={handleChange}
-          className="w-full px-2.5 py-1.5 bg-transparent text-sm placeholder:text-neutral-400 placeholder:text-xs placeholder:font-extraligh border rounded outline-none outline-1 outline-transparent outline outline-offset-0 focus-visible:outline-white"
+          className="w-full px-2.5 py-1.5 bg-transparent hover:border-sky-400 transition-colors ease-linear active:border-sky-400 text-sm placeholder:text-neutral-400 placeholder:text-xs placeholder:font-extraligh border rounded outline-1 outline-transparent outline-offset-0 outline focus-visible:outline-sky-400 focus-visible:border-sky-400"
         />
-        {errors.email && (
-          <p className="mx-auto text-xs font-semibold text-red-500">
-            {ERROR_CODES[errors.email]}
-          </p>
-        )}
       </div>
 
       <div className="flex flex-col gap-2">
-        <label htmlFor="message" className="text-sm">
+        <label
+          htmlFor="message"
+          className="flex flex-wrap items-center gap-2 text-sm"
+        >
           Mensaje:
+          {errors.message && (
+            <p className="ml-auto text-xs font-light text-neutral-200">
+              {ERROR_CODES[errors.message]}
+            </p>
+          )}
         </label>
         <textarea
           required
@@ -69,13 +83,8 @@ export default function ContactForm() {
           cols={30}
           rows={10}
           onChange={handleChange}
-          className="w-full px-2.5 py-1.5 bg-transparent text-sm placeholder:text-neutral-400 placeholder:text-xs placeholder:font-extraligh border rounded outline-none outline-1 outline-transparent outline outline-offset-0 focus-visible:outline-white resize-none"
+          className="w-full px-2.5 py-1.5 bg-transparent hover:border-sky-400 transition-colors ease-linear active:border-sky-400 text-sm placeholder:text-neutral-400 placeholder:text-xs placeholder:font-extraligh border rounded outline-none outline-1 outline-transparent outline outline-offset-0 focus-visible:outline-sky-400 resize-none focus-visible:border-sky-400"
         />
-        {errors.message && (
-          <p className="mx-auto text-xs font-semibold text-red-500">
-            {ERROR_CODES[errors.message]}
-          </p>
-        )}
       </div>
 
       <div className="mx-auto">
