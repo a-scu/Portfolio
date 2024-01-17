@@ -54,6 +54,7 @@ export default function ImagesModal({ modal, closeModal, images }) {
               <img
                 src={img.image.src}
                 alt={img.alt}
+                loading="lazy"
                 className="object-contain max-h-full transition-opacity ease-linear rounded cursor-pointer"
               />
             </div>

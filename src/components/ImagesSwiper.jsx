@@ -53,6 +53,7 @@ export default function ImagesSwiper({ images }) {
             <img
               src={img.image.src}
               alt={img.alt}
+              loading="lazy"
               className="object-contain transition-opacity ease-linear rounded cursor-pointer w-full max-w-[calc(100vw-64px)] h-fit max-h-64 hover:opacity-90"
             />
           </SwiperSlide>
