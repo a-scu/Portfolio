@@ -65,6 +65,8 @@ export default function ImagesModal({ modal, closeModal, images }) {
       <div className="flex justify-center w-full gap-8 px-4 py-8 ">
         <button
           onClick={handlePrev}
+          title="Anterior"
+          aria-label="Anterior"
           className="flex items-center justify-center transition ease-linear outline-none h-fit group active:scale-95 swiper-button-prev"
         >
           <ion-icon
@@ -75,6 +77,8 @@ export default function ImagesModal({ modal, closeModal, images }) {
 
         <button
           onClick={closeModal}
+          title="Cerrar"
+          aria-label="Cerrar"
           className="flex items-center justify-center transition ease-linear outline-none h-fit group active:scale-95"
         >
           <ion-icon
@@ -85,6 +89,8 @@ export default function ImagesModal({ modal, closeModal, images }) {
 
         <button
           onClick={handleNext}
+          title="Siguiente"
+          aria-label="Siguiente"
           className="flex items-center justify-center transition ease-linear outline-none h-fit group active:scale-95 swiper-button-next"
         >
           <ion-icon
