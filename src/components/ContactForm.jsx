@@ -12,80 +12,74 @@ export default function ContactForm() {
   };
 
   return (
-    <form className="flex flex-col w-full gap-4 max-w-80">
-      <div className="flex flex-col gap-2">
-        <label
-          htmlFor="name"
-          className="flex flex-wrap items-center gap-2 text-sm"
-        >
-          Nombre:
-          {errors.name && (
-            <p className="ml-auto text-xs font-light text-neutral-200">
-              {ERROR_CODES[errors.name]}
-            </p>
-          )}
-        </label>
-        <input
-          required
-          maxLength={64}
-          id="name"
-          name="name"
-          value={form.name}
-          placeholder="Tu nombre"
-          onChange={handleChange}
-          className="w-full px-2.5 py-1.5 bg-transparent hover:border-sky-400 transition-colors ease-linear active:border-sky-400 text-sm placeholder:text-neutral-400 placeholder:text-xs placeholder:font-extraligh border rounded outline-1 outline-transparent outline-offset-0 outline focus-visible:outline-sky-400 focus-visible:border-sky-400"
-        />
-      </div>
+    <form className="flex flex-col w-full gap-2 max-w-80">
+      <label htmlFor="name" className="text-sm">
+        Nombre:
+      </label>
+      <input
+        required
+        maxLength={64}
+        id="name"
+        name="name"
+        value={form.name}
+        placeholder="..."
+        onChange={handleChange}
+        className="w-full px-2.5 py-1.5 bg-transparent hover:border-sky-400 transition-colors ease-linear active:border-sky-400 text-sm placeholder:text-neutral-400 placeholder:text-xs placeholder:font-extraligh border rounded outline-1 outline-transparent outline-offset-0 outline focus-visible:outline-sky-400 focus-visible:border-sky-400"
+      />
 
-      <div className="flex flex-col gap-2">
-        <label
-          htmlFor="email"
-          className="flex flex-wrap items-center gap-2 text-sm"
-        >
-          Email:
-          {errors.email && (
-            <p className="ml-auto text-xs font-light text-neutral-200">
-              {ERROR_CODES[errors.email]}
-            </p>
-          )}
-        </label>
-        <input
-          required
-          maxLength={128}
-          id="email"
-          name="email"
-          value={form.email}
-          placeholder="Tu email"
-          onChange={handleChange}
-          className="w-full px-2.5 py-1.5 bg-transparent hover:border-sky-400 transition-colors ease-linear active:border-sky-400 text-sm placeholder:text-neutral-400 placeholder:text-xs placeholder:font-extraligh border rounded outline-1 outline-transparent outline-offset-0 outline focus-visible:outline-sky-400 focus-visible:border-sky-400"
-        />
-      </div>
+      <p
+        className={`font-medium text-xs ${
+          errors.name ? "text-red-400" : "text-transparent"
+        }`}
+      >
+        {ERROR_CODES[errors.name] || "..."}
+      </p>
 
-      <div className="flex flex-col gap-2">
-        <label
-          htmlFor="message"
-          className="flex flex-wrap items-center gap-2 text-sm"
-        >
-          Mensaje:
-          {errors.message && (
-            <p className="ml-auto text-xs font-light text-neutral-200">
-              {ERROR_CODES[errors.message]}
-            </p>
-          )}
-        </label>
-        <textarea
-          required
-          maxLength={512}
-          id="message"
-          name="message"
-          value={form.message}
-          placeholder="Tu mensaje"
-          cols={30}
-          rows={10}
-          onChange={handleChange}
-          className="w-full px-2.5 py-1.5 bg-transparent hover:border-sky-400 transition-colors ease-linear active:border-sky-400 text-sm placeholder:text-neutral-400 placeholder:text-xs placeholder:font-extraligh border rounded outline-none outline-1 outline-transparent outline outline-offset-0 focus-visible:outline-sky-400 resize-none focus-visible:border-sky-400"
-        />
-      </div>
+      <label htmlFor="email" className="text-sm">
+        Email:
+      </label>
+      <input
+        required
+        maxLength={128}
+        id="email"
+        name="email"
+        value={form.email}
+        placeholder="..."
+        onChange={handleChange}
+        className="w-full px-2.5 py-1.5 bg-transparent hover:border-sky-400 transition-colors ease-linear active:border-sky-400 text-sm placeholder:text-neutral-400 placeholder:text-xs placeholder:font-extraligh border rounded outline-1 outline-transparent outline-offset-0 outline focus-visible:outline-sky-400 focus-visible:border-sky-400"
+      />
+
+      <p
+        className={`font-medium text-xs ${
+          errors.email ? "text-red-400" : "text-transparent"
+        }`}
+      >
+        {ERROR_CODES[errors.email] || "..."}
+      </p>
+
+      <label htmlFor="message" className="text-sm">
+        Mensaje:
+      </label>
+      <textarea
+        required
+        maxLength={512}
+        id="message"
+        name="message"
+        value={form.message}
+        placeholder="..."
+        cols={30}
+        rows={10}
+        onChange={handleChange}
+        className="w-full px-2.5 py-1.5 bg-transparent hover:border-sky-400 transition-colors ease-linear active:border-sky-400 text-sm placeholder:text-neutral-400 placeholder:text-xs placeholder:font-extraligh border rounded outline-none outline-1 outline-transparent outline outline-offset-0 focus-visible:outline-sky-400 resize-none focus-visible:border-sky-400"
+      />
+
+      <p
+        className={`font-medium text-xs ${
+          errors.message ? "text-red-400" : "text-transparent"
+        }`}
+      >
+        {ERROR_CODES[errors.message] || "..."}
+      </p>
 
       <div className="mx-auto">
         {loading ? (
